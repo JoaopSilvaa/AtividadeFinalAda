@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<style>
+    .user-form-error {
+        color: red;
+    }
+</style>
+
+<head>
+    <title th:text="#{views.title}"></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="col-md-12">
+        <div class="panel panel-info">
+            <div class="panel-heading"><label th:text="#{user.view.register.title}" /></div>
+            <div class="panel-body">
+                <form action="#" th:action="@{/app/users}" th:object="${user}" method="post" role="form">
+                    <div class="form-group">
+                        <label class="control-label" for="name" th:text="#{user.name}" />
+                        <input type="text" class="form-control" id="name" th:field="*{name}">
+                        <p th:if="${#fields.hasErrors('name')}" th:errorclass="user-form-error" th:errors="*{name}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="username" th:text="#{user.username}" />
+                        <input type="text" class="form-control" id="username" th:readonly="${user.id != null} ? 'readonly' : null" th:field="*{username}">
+                        <p th:if="${#fields.hasErrors('username')}" th:errorclass="user-form-error" th:errors="*{username}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="password" th:text="#{user.password}" />
+                        <input type="password" class="form-control" id="password" th:field="*{password}">
+                        <p th:if="${#fields.hasErrors('password')}" th:errorclass="user-form-error" th:errors="*{password}"/>
+                    </div>
+                    <input type="hidden" th:field="*{id}"/>
+                    <button type="submit" class="btn btn-default" th:text="#{views.save}" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
