@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Aula toda segunda",
+    "description": "Segunda fire!!!!",
+    "user": {
+      "id": 1,
+      "name": "William"
+    },
+    "status": "OPEN"
+  },
+  {
+    "title": "Aula toda quarta",
+    "description": "Quarta fire!!!!",
+    "user": {
+      "id": 1,
+      "name": "William"
+    },
+    "status": "OPEN"
+  }
+]

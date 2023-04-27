@@ -1,0 +1,9 @@
+{
+  "title": "Aula toda segunda",
+  "description": "Segunda fire!!!!",
+  "user": {
+    "id": 1,
+    "name": "William"
+  },
+  "status": "OPEN"
+}
